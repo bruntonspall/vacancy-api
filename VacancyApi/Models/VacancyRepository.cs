@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Driver.Builders;
-using MvcApplication1.Controllers;
+using VacancyApi.Controllers;
 
 
-namespace MvcApplication1.Models
+namespace VacancyApi.Models
 {
     public class VacancyRepository
     {

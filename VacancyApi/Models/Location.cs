@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace MvcApplication1.Models
+namespace VacancyApi.Models
 {
     public class Location
     {
