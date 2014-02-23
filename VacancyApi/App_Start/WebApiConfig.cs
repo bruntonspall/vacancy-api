@@ -12,7 +12,7 @@ namespace VacancyApi
             config.Routes.MapHttpRoute(
                 name: "geo search",
                 routeTemplate: "geosearch/{x}/{y}/{radius}",
-                defaults: new { controller = "geosearch" }
+                defaults: new { controller = "geosearch", radius = RouteParameter.Optional }
             );
             config.Routes.MapHttpRoute(
                 name: "free text search",

@@ -16,5 +16,9 @@ namespace VacancyApi.Controllers
         public IEnumerable<Vacancy> GetNear(double x, double y, double radius) {
             return repo.Nearby(x, y, radius);
         }
+        public IEnumerable<Vacancy> GetNear(double x, double y)
+        {
+            return repo.Nearby(x, y, 1.0);
+        }
     }
 }
