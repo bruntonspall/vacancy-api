@@ -16,19 +16,8 @@ namespace MvcApplication1
     {
         protected void Application_Start()
         {
-            AreaRegistration.RegisterAllAreas();
-
-//            ConfigureApi(GlobalConfiguration.Configuration);
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
-        }
-
-        void ConfigureApi(HttpConfiguration config)
-        {
-            // Remove the XML formatter
-            config.Formatters.Remove(config.Formatters.XmlFormatter);
         }
     }
 }
