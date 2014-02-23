@@ -14,7 +14,7 @@ namespace MvcApplication1.Controllers
     }
     public class AdminController : ApiController
     {
-        static readonly VacancyRepository repo = new VacancyRepository();
+        static readonly VacancyRepository repo = VacancyRepository.repo;
 
         public LinesAndCount Get()
         {

@@ -13,9 +13,11 @@ namespace MvcApplication1.Models
 {
     public class VacancyRepository
     {
+        static readonly public VacancyRepository repo = new VacancyRepository();
+
         private MongoDatabase database;
         private MongoCollection coll;
-        public VacancyRepository()
+        private VacancyRepository()
         {
             var connectionString = "mongodb://webapp:zifnabblarg@troup.mongohq.com:10089/apprenticeships";
             var client = new MongoClient(connectionString);
@@ -37,7 +39,7 @@ namespace MvcApplication1.Models
 
         public IEnumerable<Vacancy> Nearby(double x, double y, double distance)
         {
-            return coll.FindAs<Vacancy>(Query.Near("location.coordinates", x, y , distance));
+            return coll.FindAs<Vacancy>(Query.Near("location", x, y , distance, true)).SetLimit(5);
         }
 
         public LinesAndCount UpdateSearchTerms()

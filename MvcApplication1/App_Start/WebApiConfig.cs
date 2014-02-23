@@ -10,6 +10,11 @@ namespace MvcApplication1
         public static void Register(HttpConfiguration config)
         {
             config.Routes.MapHttpRoute(
+                name: "geo search",
+                routeTemplate: "geosearch/{x}/{y}/{radius}",
+                defaults: new { controller = "geosearch" }
+            );
+            config.Routes.MapHttpRoute(
                 name: "free text search",
                 routeTemplate: "search/{text}",
                 defaults: new { controller = "search", text = RouteParameter.Optional }
