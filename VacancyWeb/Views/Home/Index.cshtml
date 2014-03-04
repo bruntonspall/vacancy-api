@@ -1,0 +1,18 @@
+﻿@model IEnumerable<VacancyWeb.Models.Vacancy>
+
+@{
+    ViewBag.Title = "HomeIndex";
+}
+
+<div class="row">
+    @foreach (var vacancy in Model) {
+    <div class="col-sm-4 col-xs-6 col-md-3" >
+        <h3>Title: @vacancy.title</h3>
+        <p>
+            @vacancy.description
+            <br />
+            <a href="@vacancy.url">Apply</a>
+        </p>
+    </div>
+    }
+</div>
