@@ -7,6 +7,7 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web;
 using RestSharp.Contrib;
+using System.Configuration;
 
 namespace VacancyWeb.Models
 {
@@ -32,7 +33,7 @@ namespace VacancyWeb.Models
         private T execute<T>(RestRequest request) where T : new()
         {
             var client = new RestClient();
-            client.BaseUrl = "http://localhost:1076/";
+            client.BaseUrl = ConfigurationManager.AppSettings("api-base-url");
 
             var response = client.Execute<T>(request);
 
