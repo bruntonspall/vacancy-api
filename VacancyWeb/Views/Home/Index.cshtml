@@ -3,10 +3,14 @@
 @{
     ViewBag.Title = "HomeIndex";
 }
-
+@{var c = 0;}
 <div class="row">
     @foreach (var vacancy in Model) {
-    <div class="col-sm-4 col-xs-12 col-md-3" >
+        @if (c == 6) {
+            @{c = 0}
+            </div><div class="row">
+        }
+    <div class="col-sm-6 col-xs-12 col-md-3" >
         <h3>Title: @vacancy.title</h3>
         <p>@vacancy.address</p>
         <p>Applications closes: @vacancy.closing_date</p>
