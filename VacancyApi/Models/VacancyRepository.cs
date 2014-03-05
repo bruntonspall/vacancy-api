@@ -26,7 +26,7 @@ namespace VacancyApi.Models
             coll = database.GetCollection("vacancy");
         }
         public IEnumerable<Vacancy> GetAll() {
-            return coll.FindAllAs<Vacancy>().SetLimit(5);
+            return coll.FindAllAs<Vacancy>().SetLimit(20);
         }
         public Vacancy Get(string id)
         {
@@ -34,12 +34,12 @@ namespace VacancyApi.Models
         }
         public IEnumerable<Vacancy> Search(string text)
         {
-            return coll.FindAs<Vacancy>(Query.In("search", new BsonArray(text.Split().Select((w) => w.Trim(" ,;:.\"\'\\".ToCharArray()).ToLower())))).SetLimit(5);
+            return coll.FindAs<Vacancy>(Query.In("search", new BsonArray(text.Split().Select((w) => w.Trim(" ,;:.\"\'\\".ToCharArray()).ToLower())))).SetLimit(20);
         }
 
         public IEnumerable<Vacancy> Nearby(double x, double y, double distance)
         {
-            return coll.FindAs<Vacancy>(Query.Near("location", x, y , distance, true)).SetLimit(5);
+            return coll.FindAs<Vacancy>(Query.Near("location", x, y , distance, true)).SetLimit(20);
         }
 
         public LinesAndCount UpdateSearchTerms()
