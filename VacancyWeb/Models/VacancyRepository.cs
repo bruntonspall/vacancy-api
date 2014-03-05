@@ -33,7 +33,7 @@ namespace VacancyWeb.Models
         private T execute<T>(RestRequest request) where T : new()
         {
             var client = new RestClient();
-            client.BaseUrl = ConfigurationManager.AppSettings("api-base-url");
+            client.BaseUrl = ConfigurationManager.AppSettings["api-base-url"];
 
             var response = client.Execute<T>(request);
 
