@@ -8,7 +8,7 @@
     @foreach (var vacancy in Model) {
     <div class="col-sm-4 col-xs-12 col-md-3" >
         <h3>Title: @vacancy.title</h3>
-        <p>@vacancy.location</p>
+        <p>@vacancy.address</p>
         <p>Applications closes: @vacancy.closing_date</p>
         <p style="font-weight: bold">£@vacancy.wage_weekly / week</p>
         <p><a href="@vacancy.url">Apply</a></p>
